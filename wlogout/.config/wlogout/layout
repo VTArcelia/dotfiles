@@ -6,15 +6,15 @@
 {
     "label" : "logout",
     "action" : "wayland-logout",
-    "keybind" : "e"
+    "keybind" : "l"
 }
 {
     "label" : "shutdown",
     "action" : "systemctl poweroff || loginctl poweroff",
-    "keybind" : "s"
+    "keybind" : "p"
 }
 {
     "label": "suspend",
     "action": "systemctl suspend || loginctl suspend",
-    "keybind": "u"
+    "keybind": "s"
 }
