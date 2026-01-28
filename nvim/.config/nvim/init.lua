@@ -1,7 +1,6 @@
 -- bread's neovim config
 -- keymaps are in lua/config/mappings.lua
 -- install a patched font & ensure your terminal supports glyphs
--- enjoy :D
 
 -- auto install vim-plug and plugins, if not found
 local data_dir = vim.fn.stdpath('data')
