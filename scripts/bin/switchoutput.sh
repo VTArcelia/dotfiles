@@ -10,7 +10,7 @@ selection=$(printf "%s\n" "$options" | rofi -dmenu -i -p "Output:")
 sink_id=$(printf "%s" "$selection" | awk '{print $1}')
 
 if [ -n "$sink_id" ]; then
-    wpctl set-default "$sink_id" && notify-send "Audio switched to: $selection"
+    wpctl set-default "$sink_id" && notify-send "Output switched to: $selection"
 else
-    notify-send "Audio switch failed"
+    notify-send "Output switch failed"
 fi
