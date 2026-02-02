@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
+# Option 2 of this if you have middle click paste turned on, then you don't need to copy the word to get the definition (wayland)
 word=${1:-$(xclip -o -selection primary 2>/dev/null || wl-paste 2>/dev/null)}
+# word=${1:-$(xclip -o -selection primary 2>/dev/null || wl-paste --primary 2>/dev/null)}
+
 
 # Check for empty word or special characters
 [[ -z "$word" || "$word" =~ [\/] ]] && notify-send -h string:bgcolor:#bf616a -t 3000 "Invalid input." && exit 0
@@ -17,7 +20,7 @@ query=$(curl -s --connect-timeout 5 --max-time 10 "https://api.dictionaryapi.dev
 def=$(echo "$query" | jq -r '[.[].meanings[] | {pos: .partOfSpeech, def: .definitions[].definition}] | .[:1].[] | "\n\(.pos). \(.def)"')
 
 # Requires a notification daemon to be installed
-notify-send -t 60000 "$word -" "$def"
+notify-send -t 10000 "$word -" "$def"
 
 
 ### MORE OPTIONS :)
