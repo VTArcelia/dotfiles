@@ -1,46 +1,36 @@
-@define-color bg    #1a1b26; 
-@define-color fg    #a9b1d6; 
-@define-color blk   #32344a; 
-@define-color red   #f7768e; 
-@define-color grn   #9ece6a; 
-@define-color ylw   #e0af68; 
-@define-color blu   #7aa2f7; 
-@define-color mag   #ad8ee6; 
-@define-color cyn   #0db9d7; 
-@define-color brblk #444b6a; 
-@define-color white #ffffff; 
+@import url("file:///home/arcy/.cache/wal/colors-waybar.css");
 
 * {
     font-family: "JetBrainsMono Nerd Font", monospace;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
 }
 
 window#waybar {
-    background-color: @bg;
-    color: @fg;
+    background-color: @background;
+    color: @foreground;
 }
 
 #workspaces button {
     padding: 0 4px;
-    color: @cyn;
+    color: @foreground;
     background: transparent;
-    border-bottom: 3px solid @bg;
+    border-bottom: 3px solid @background;
 }
 #workspaces button.active {
-    color: @cyn;
-    border-bottom: 3px solid @mag;
+    color: @foreground;
+    border-bottom: 3px solid @color1;
 }
 #workspaces button.empty {
-    color: @white;
+    color: @color8;
 }
 #workspaces button.empty.active {
-    color: @cyn;
-    border-bottom: 3px solid @mag;
+    color: @color2;
+    border-bottom: 3px solid @color1;
 }
 
 #workspaces button.urgent {
-    background-color: @red;
+    background-color: @color2;
 }
 
 button:hover {
@@ -57,48 +47,48 @@ button:hover {
 #network,
 #tray {
     padding: 0 6px;
-    color: @white;
+    color: @color2;
 }
 
 #custom-sep {
-    color: @brblk;
+    color: @color8;
 }
 
 #clock {
-    color: @cyn;
-    border-bottom: 4px solid @cyn;
+    color: @color1;
+    border-bottom: 4px solid @color1;
 }
 
 #battery {
-    color: @mag;
-    border-bottom: 4px solid @mag;
+    color: @color6;
+    border-bottom: 4px solid @color6;
 }
 
 #disk {
-    color: @ylw;
-    border-bottom: 4px solid @ylw;
+    color: @color5;
+    border-bottom: 4px solid @color5;
 }
 
 #memory {
-    color: @mag;
-    border-bottom: 4px solid @mag;
+    color: @color4;
+    border-bottom: 4px solid @color4;
 }
 
 #cpu {
-    color: @grn;
-    border-bottom: 4px solid @grn;
+    color: @color3;
+    border-bottom: 4px solid @color3;
 }
 
 #network {
-    color: @blu;
-    border-bottom: 4px solid @blu;
+    color: @color5;
+    border-bottom: 4px solid @color5;
 }
 
 #network.disconnected {
-    background-color: @red;
+    background-color: @color12;
 }
 
 #tray {
-    background-color: #2980b9;
+    background-color: @color8;
 }
 

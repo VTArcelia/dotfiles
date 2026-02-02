@@ -11,7 +11,8 @@ ls="ls -h --color=auto --group-directories-first" \
 la="ls -lah --color=auto --group-directories-first" \
 grep="grep --color=auto" \
 shell="exec $SHELL -l" \
-fk="sudo !!" \
+sudo="sudo " \
+fk="sudo \$(fc -ln -1)" \
 mv="mv -i" \
 rm="rm -Iv" \
 df="df -h" \
@@ -26,3 +27,5 @@ bathelp='bat --plain --language=help'
 help() {
     "$@" --help 2>&1 | bathelp
 }
+
+

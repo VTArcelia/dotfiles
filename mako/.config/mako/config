@@ -3,9 +3,9 @@ layer=overlay
 anchor=top-right
 width=400
 height=140
-background-color=#1a1b26
-text-color=#c0caf5
-border-color=#7aa2f7
+background-color=#0f091789
+text-color=#c3c1c5
+border-color=#AEADCF
 border-size=2
 border-radius=4
 font=JetBrainsMono Nerd Font 10
@@ -17,14 +17,11 @@ default-timeout=5000
 ignore-timeout=1
 
 [urgency=low]
-border-color=#3b4261
 default-timeout=3000
 
 [urgency=normal]
-border-color=#7aa2f7
 default-timeout=5000
 
 [urgency=high]
-border-color=#f7768e
 default-timeout=10000
 

@@ -1,20 +1,24 @@
 {
     "label" : "reboot",
     "action" : "systemctl reboot || loginctl reboot",
+	"text" : "(R)eboot"
     "keybind" : "r"
 }
 {
     "label" : "logout",
     "action" : "wayland-logout",
-    "keybind" : "l"
+	"text" : "(L)ogout"
+	"keybind" : "l"
 }
 {
     "label" : "shutdown",
     "action" : "systemctl poweroff || loginctl poweroff",
-    "keybind" : "p"
+	"text" : "(P)ower down"
+	"keybind" : "p"
 }
 {
     "label": "suspend",
     "action": "systemctl suspend || loginctl suspend",
+	"text": "(S)uspend"
     "keybind": "s"
 }

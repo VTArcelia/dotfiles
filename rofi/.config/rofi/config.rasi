@@ -26,4 +26,5 @@ configuration{
     kb-move-char-forward: "Control+f";
     kb-mode-complete: "Control+o";
 }
-@theme "tokyonight.rasi"
+@theme "layout.rasi"
+@import "~/.cache/wal/colors-rofi-dark.rasi"

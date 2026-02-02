@@ -18,7 +18,7 @@ local themes = { --add more themes here, if installed
 	{ "pywal16", "pywal16-nvim" },
 }
 
-local current_theme_index = 1
+local current_theme_index = 3
 
 _G.switch_theme = function()
 	current_theme_index = current_theme_index % #themes + 1

@@ -3,122 +3,104 @@
 "logo": {
   "type": "kitty-direct",
   "source": "/home/arcy/.config/fastfetch/bocchi-transparent.png",
-  "width": 34,
-  "height": 18,
+  "width": 30,
+  "height": 15,
   "padding": {
     "top": 2,
     "left": 1,
     "right": 2
     }
   },
-  "display": {
-    "separator": "  "
-  },
-  "modules": [
-    // Title
-    {
-      "type": "title",
-      "format": "{#1}╭───────────── {#}{user-name-colored}"
-    },
-    // System Information
-    {
-      "type": "custom",
-      "format": "{#1}│ {#}System Information"
-    },
-    {
-      "type": "os",
-      "key": "{#separator}│  {#keys}󰍹 OS"
-    },
-    {
-      "type": "kernel",
-      "key": "{#separator}│  {#keys}󰒋 Kernel"
-    },
-    {
-      "type": "uptime",
-      "key": "{#separator}│  {#keys}󰅐 Uptime"
-    },
-    {
-      "type": "packages",
-      "key": "{#separator}│  {#keys}󰏖 Packages",
-      "format": "{all}"
-    },
-    {
-      "type": "custom",
-      "format": "{#1}│"
-    },
-    // Desktop Environment
-    {
-      "type": "custom",
-      "format": "{#1}│ {#}Desktop Environment"
-    },
-    {
-      "type": "de",
-      "key": "{#separator}│  {#keys}󰧨 DE"
-    },
-    {
-      "type": "wm",
-      "key": "{#separator}│  {#keys}󱂬 WM"
-    },
-    {
-      "type": "wmtheme",
-      "key": "{#separator}│  {#keys}󰉼 Theme"
-    },
-    {
-      "type": "display",
-      "key": "{#separator}│  {#keys}󰹑 Resolution"
-    },
-    {
-      "type": "shell",
-      "key": "{#separator}│  {#keys}󰞷 Shell"
-    },
-    {
-      "type": "terminalfont",
-      "key": "{#separator}│  {#keys}󰛖 Font"
-    },
-    {
-      "type": "custom",
-      "format": "{#1}│"
-    },
-    // Hardware Information
-    {
-      "type": "custom",
-      "format": "{#1}│ {#}Hardware Information"
-    },
-    {
-      "type": "cpu",
-      "key": "{#separator}│  {#keys}󰻠 CPU"
-    },
-    {
-      "type": "gpu",
-      "key": "{#separator}│  {#keys}󰢮 GPU"
-    },
-    {
-      "type": "memory",
-      "key": "{#separator}│  {#keys}󰍛 Memory"
-    },
-    {
-      "type": "swap",
-      "key": "{#separator}│  {#keys}󰓡 Swap"
-    },
-    {
-      "type": "disk",
-      "key": "{#separator}│  {#keys}󰋊 Disk (/)",
-      "folders": "/"
-    },
-    {
-      "type": "custom",
-      "format": "{#1}│"
-    },
-    // Colors
-    {
-      "type": "colors",
-      "key": "{#separator}│",
-      "symbol": "circle"
-    },
-    // Footer
-    {
-      "type": "custom",
-      "format": "{#1}╰───────────────────────────────╯"
-    }
-  ]
+    "modules": [
+        {
+            "type": "custom",
+            "format": "\u001b[90m┌──────────────────────Software──────────────────────┐"
+        },
+        {
+            "type": "os",
+            "key": " OS",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "kernel",
+            "key": "│ ├",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "packages",
+            "key": "│ ├󰏖",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "shell",
+            "key": "└ └",
+            "keyColor": "yellow"
+        },
+        "break",
+        {
+            "type": "de",
+            "key": " DE",
+            "keyColor": "blue"
+        },
+        {
+            "type": "lm",
+            "key": "│ ├",
+            "keyColor": "blue"
+        },
+        {
+            "type": "wm",
+            "key": "│ ├",
+            "keyColor": "blue"
+        },
+        {
+            "type": "wmtheme",
+            "key": "│ ├󰉼",
+            "keyColor": "blue"
+        },
+        {
+            "type": "terminal",
+            "key": "└ └",
+            "keyColor": "blue"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[90m└────────────────────────────────────────────────────┘"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001b[90m┌────────────────────Uptime / Age / DT────────────────────┐"
+        },
+        {
+            "type": "command",
+            "key": "  OS Age ",
+            "keyColor": "magenta",
+            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+        },
+        {
+            "type": "uptime",
+            "key": "  Uptime ",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "datetime",
+            "key": "  DateTime ",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[90m└─────────────────────────────────────────────────────────┘"
+        },
+
+//        {
+//            "type": "colors"
+//        },
+
+        {
+            "type": "colors",
+            "paddingLeft": 2,
+            "symbol": "circle"
+        }
+ 
+    ]
 }

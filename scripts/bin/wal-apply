@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# File that always holds the current wallpaper path
+WALL="$HOME/.config/hypr/wallpaper"
+[ -f "$WALL" ] || exit 1
+
+# Read the actual image path
+WALL_PATH=$(<"$WALL")
+[ -f "$WALL_PATH" ] || exit 1
+
+wal -i "$WALL_PATH" -n
+
+pkill -USR1 waybar
+
+hyprctl reload
+
+"$XDG_CONFIG_HOME/mako/update-theme.sh"

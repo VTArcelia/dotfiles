@@ -32,5 +32,6 @@ while read -r selected; do
         pkill -x swaybg || true
         sleep 0.2
         setsid swaybg -m "$MODE" -i "$full_path" >/dev/null 2>&1 &
-    fi
+		hyprctl reload
+	fi
 done

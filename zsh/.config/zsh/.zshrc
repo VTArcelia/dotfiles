@@ -85,3 +85,5 @@ echo -e "${NEWLINE}\x1b[38;5;137m\x1b[48;5;0m it's$(print -P '%D{%_I:%M%P}\n') \
 # syntax highlighting
 # requires zsh-syntax-highlighting package
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export PATH=$PATH:/home/arcy/.spicetify
