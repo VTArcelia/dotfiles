@@ -18,7 +18,7 @@ window#waybar {
     border-bottom: 3px solid @background;
 }
 #workspaces button.active {
-    color: @foreground;
+    color: @color2;
     border-bottom: 3px solid @color1;
 }
 #workspaces button.empty {
