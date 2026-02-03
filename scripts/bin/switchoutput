@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 options=$(wpctl status \
   | sed -n '/├─ Sinks:/,/├─ Sources:/p' \
