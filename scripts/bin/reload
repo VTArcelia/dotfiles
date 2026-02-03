@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+MENU=$(printf "swaybg\nwaybar\nhyprland\nall\n" | rofi -dmenu -i -p "Restart")
+
+
+WALLPAPER_FILE="$HOME/.config/hypr/wallpaper"
+
+case "$MENU" in
+  swaybg)
+    pkill swaybg || true
+    sleep 0.1
+    swaybg -m fill -i "$(cat "$WALLPAPER_FILE")" &
+    ;;
+  waybar)
+    pkill waybar || true
+    sleep 0.1
+    waybar &
+    ;;
+  hyprland)
+    hyprctl reload
+    ;;
+  all)
+    pkill swaybg || true
+    pkill waybar || true
+    sleep 0.2
+    swaybg -m fill -i "$(cat "$WALLPAPER_FILE")" &
+    waybar &
+    hyprctl reload
+    ;;
+  *)
+    exit 0
+    ;;
+esac
+
