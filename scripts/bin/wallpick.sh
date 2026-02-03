@@ -8,30 +8,33 @@ MODE="fill"
 
 mkdir -p "$CACHE_DIR"
 
-# Find images and sort: case-insensitive, natural numeric order
-mapfile -t images < <(find "$WALL_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) | sort -f -V)
+mapfile -t images < <(
+    find "$WALL_DIR" -maxdepth 1 -type f \
+        \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) \
+        | sort -f -V
+)
 
-# Generate entries with thumbnails
-printf '%s\0' "${images[@]}" |
-while IFS= read -r -d '' file; do
-    basename=$(basename "$file")
-    echo -en "$basename\0icon\x1fthumbnail://$file\n"
+for file in "${images[@]}"; do
+    base="$(basename "$file")"
+    name="${base%.*}"
+    echo -en "$name\0icon\x1fthumbnail://$file\n"
 done |
 rofi -dmenu \
+     -matching fuzzy \
+     -format i \
      -show-icons \
      -theme ~/.config/rofi/wallpaper-selector.rasi \
      -p "Select Wallpaper" |
-while read -r selected; do
-    if [[ -n "$selected" ]]; then
-        full_path="$WALL_DIR/$selected"
+while read -r index; do
+    [[ -z "$index" ]] && exit 0
 
-        # Save selection to Hyprland wallpaper state
-        echo "$full_path" > "$STATE"
+    full_path="${images[$index]}"
 
-        # Apply wallpaper using swaybg
-        pkill -x swaybg || true
-        sleep 0.2
-        setsid swaybg -m "$MODE" -i "$full_path" >/dev/null 2>&1 &
-		hyprctl reload
-	fi
+    echo "$full_path" > "$STATE"
+
+    pkill -x swaybg || true
+    sleep 0.2
+    setsid swaybg -m "$MODE" -i "$full_path" >/dev/null 2>&1 &
+    hyprctl reload
 done
+
