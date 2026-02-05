@@ -9,7 +9,7 @@ WALL="$HOME/.config/hypr/wallpaper"
 WALL_PATH=$(<"$WALL")
 [ -f "$WALL_PATH" ] || exit 1
 
-wal -i "$WALL_PATH" -n
+wal -i "$WALL_PATH" -n --backend haishoku # using haishoku to be "simpler" for some images i have
 
 pkill -USR1 waybar
 
