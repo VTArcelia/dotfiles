@@ -16,7 +16,7 @@
     "modules-center": [
         "custom/sep",
         "hyprland/workspaces",
-        "custom/sep"
+		"custom/sep"
     ],
 
     "modules-right": [
@@ -36,7 +36,8 @@
 
     // Modules configuration
     "hyprland/workspaces": {
-        "disable-scroll": true,
+		"disable-scroll": true,
+		"ignore-hidden": false,
         "all-outputs": true,
         "warp-on-scroll": false,
         "format": "{name}",
@@ -44,8 +45,9 @@
             "*" : 9
         }
     },
-    "hyprland/window" : {
-        "max-length": 40,
+//    "hyprland/window" : {
+		"ext/window" : {
+		"max-length": 40,
         "seperate-outputs": false
     },
     "tray": {
