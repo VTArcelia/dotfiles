@@ -15,4 +15,3 @@ pkill -USR1 waybar
 
 hyprctl reload
 
-# "$XDG_CONFIG_HOME/mako/update-theme.sh"
