@@ -8,7 +8,7 @@ export TERM="xterm-kitty"
 export TERMINAL="kitty"
 export MUSPLAYER="termusic"
 export BROWSER="helium-browser"
-export BROWSER2="firefox"
+export BROWSER2="firefox-developer-edition"
 # export DISPLAY=:0 # useful for some scripts
 
 # follow XDG base dir specification
